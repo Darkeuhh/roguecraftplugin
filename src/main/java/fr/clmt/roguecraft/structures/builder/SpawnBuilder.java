@@ -16,7 +16,7 @@ public class SpawnBuilder {
         InputStream stream = plugin.getResource("structures/spawn/spawn1.nbt");
         try {
             Structure spawn1 = Bukkit.getStructureManager().loadStructure(stream);
-            spawn1.place(Bukkit.getWorlds().get(0), new BlockVector(x+1, y, z+1), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
+            spawn1.place(Bukkit.getWorlds().get(0), new BlockVector(x, y, z), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
             stream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -24,7 +24,7 @@ public class SpawnBuilder {
         stream = plugin.getResource("structures/spawn/spawn2.nbt");
         try {
             Structure spawn2 = Bukkit.getStructureManager().loadStructure(stream);
-            spawn2.place(Bukkit.getWorlds().get(0), new BlockVector(x+49, y, z+1), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
+            spawn2.place(Bukkit.getWorlds().get(0), new BlockVector(x+48, y, z), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
             stream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -32,7 +32,7 @@ public class SpawnBuilder {
         stream = plugin.getResource("structures/spawn/spawn3.nbt");
         try {
             Structure spawn3 = Bukkit.getStructureManager().loadStructure(stream);
-            spawn3.place(Bukkit.getWorlds().get(0), new BlockVector(x+1, y, z+49), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
+            spawn3.place(Bukkit.getWorlds().get(0), new BlockVector(x, y, z+48), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
             stream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -40,7 +40,7 @@ public class SpawnBuilder {
         stream = plugin.getResource("structures/spawn/spawn4.nbt");
         try {
             Structure spawn4 = Bukkit.getStructureManager().loadStructure(stream);
-            spawn4.place(Bukkit.getWorlds().get(0), new BlockVector(x+49, y, z+49), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
+            spawn4.place(Bukkit.getWorlds().get(0), new BlockVector(x+48, y, z+48), true, StructureRotation.NONE, Mirror.NONE, 0, 1.0f, new Random());
             stream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

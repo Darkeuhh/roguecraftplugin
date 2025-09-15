@@ -2,6 +2,7 @@ package fr.clmt.roguecraft.commands;
 
 import fr.clmt.roguecraft.RogueCraft;
 import fr.clmt.roguecraft.structures.builder.SpawnBuilder;
+import fr.clmt.roguecraft.structures.builder.TestroomBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
@@ -51,8 +52,10 @@ public class RogueCraftCommand implements CommandExecutor, TabExecutor {
 
                 switch(structureName) {
                     case "spawn":
-                        SpawnBuilder.build(x, y, z, plugin);
+                        SpawnBuilder.build(x+1, y+1, z+1, plugin);
                         break;
+                    case "testroom":
+                        TestroomBuilder.build(x+1, y+1, z+1, plugin);
                     default:
                         player.sendMessage("Unknown structure: " + structureName);
                         break;
