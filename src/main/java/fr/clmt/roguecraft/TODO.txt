@@ -1,0 +1,6 @@
+create room class
+
+add a micro game logic for testing purpose (array of 3 rooms)
+
+switching room
+
