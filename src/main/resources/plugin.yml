@@ -1,0 +1,16 @@
+name: RogueCraftPlugin
+version: '0.1-DEV'
+main: fr.clmt.roguecraft.RogueCraft
+api-version: '1.21'
+commands:
+    roguecraft:
+        description: Main command for RogueCraftPlugin
+        usage: /<command> <subcommand>
+        aliases: [rc]
+        permission: roguecraft.base
+        permission-message: You do not have permission to use this command.
+        rc:
+            description: Alias for /roguecraft
+            usage: /<command> <subcommand>
+            permission: roguecraft.base
+            permission-message: You do not have permission to use this command.
