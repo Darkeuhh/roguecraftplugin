@@ -1,6 +1,7 @@
 package fr.clmt.roguecraft.commands;
 
 import fr.clmt.roguecraft.RogueCraft;
+import fr.clmt.roguecraft.rooms.Rooms;
 import fr.clmt.roguecraft.structures.builder.SpawnBuilder;
 import fr.clmt.roguecraft.structures.builder.TestroomBuilder;
 import org.bukkit.Bukkit;
@@ -50,17 +51,13 @@ public class RogueCraftCommand implements CommandExecutor, TabExecutor {
                 int y = player.getLocation().getBlockY();
                 int z = player.getLocation().getBlockZ();
 
-                switch(structureName) {
-                    case "spawn":
-                        SpawnBuilder.build(x+1, y+1, z+1, plugin);
-                        break;
-                    case "testroom":
-                        TestroomBuilder.build(x+1, y+1, z+1, plugin);
-                    default:
-                        player.sendMessage("Unknown structure: " + structureName);
-                        break;
+                Rooms room = Rooms.searchForRoom(structureName);
+                if (room == null) {
+                    player.sendMessage("Invalid structure name.");
+                    return true;
                 }
-                player.sendMessage("Structure placed: " + structureName);
+                room.getBuilder().build(x, y, z, plugin);
+                player.sendMessage("Placed structure: " + structureName);
             }
             return true;
         }

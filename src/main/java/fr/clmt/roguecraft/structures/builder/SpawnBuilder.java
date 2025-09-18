@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Random;
 
-public class SpawnBuilder {
-    public static void build(int x, int y, int z, RogueCraft plugin) {
+public class SpawnBuilder extends Builder{
+    public void build(int x, int y, int z, RogueCraft plugin) {
         InputStream stream = plugin.getResource("structures/spawn/spawn1.nbt");
         try {
             Structure spawn1 = Bukkit.getStructureManager().loadStructure(stream);
