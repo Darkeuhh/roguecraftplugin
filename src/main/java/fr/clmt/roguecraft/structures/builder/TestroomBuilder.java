@@ -29,21 +29,14 @@ public class TestroomBuilder extends Builder{
 
         //starts a runnable to spawn portal particles every second and keep this task in a variable to be able to cancel it later
         BukkitTask task = Bukkit.getScheduler().runTaskTimer(plugin, () -> {
-            world.spawnParticle(Particle.PORTAL, x+8.5, y+1, z+8.5, 10, 0.5, 0.5, 0.5, 0.1);
+            world.spawnParticle(Particle.PORTAL, x+room.getX(), y+ room.getY(), z+room.getZ(), 10, 0.5, 0.5, 0.5, 0.1);
         }, 0L, 20L);
-        BukkitTask task2 = Bukkit.getScheduler().runTaskTimer(plugin, () -> {
-            world.spawnParticle(Particle.PORTAL, x+12, y+1, z+12, 10, 0.5, 0.5, 0.5, 0.1);
-        }, 0L, 20L);
+
 
         //cancel the task after 10 seconds
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             task.cancel();
         }, 200L);
-
-        Bukkit.getScheduler().runTaskLater(plugin, () -> {
-            task2.cancel();
-        }, 400L);
-
 
     }
 }

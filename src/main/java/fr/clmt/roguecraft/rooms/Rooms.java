@@ -6,7 +6,7 @@ import fr.clmt.roguecraft.structures.builder.TestroomBuilder;
 
 public enum Rooms {
     SPAWN("spawn", 4, 0, 0, 0, "structures/spawn/spawn", new SpawnBuilder()),
-    TESTROOM("testroom", 1, 0, 0, 0, "structures/testroom/testroom", new TestroomBuilder());
+    TESTROOM("testroom", 1, 46, 1, 21, "structures/testroom/testroom", new TestroomBuilder());
 
     private String name;
     private int count;
